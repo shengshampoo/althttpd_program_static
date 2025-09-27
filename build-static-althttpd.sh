@@ -14,7 +14,7 @@ curl -sL https://sqlite.org/althttpd/tarball/$aa/althttpd-$aa.tar.gz | tar xv --
 cd althttpd-$aa
 make static-althttpsd
 mv static-althttpsd althttpd
-tar vcJf ./althttpd-$(cat /etc/os-release | rg -Po 'PRETTY_NAME=\"\K[A-Za-z]+').tar.xz althttpd
+tar vcJf ./althttpd.tar.xz althttpd
 
-mv ./althttpd*.tar.xz /work/artifact/
+mv ./althttpd.tar.xz /work/artifact/
 ./althttpd --version
