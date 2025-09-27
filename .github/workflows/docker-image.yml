@@ -13,7 +13,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, ubuntu-24.04-arm]
-        dockeros: [alpine, chimera]
+        dockeros: [alpine]
     runs-on: ${{ matrix.os }}
 
     steps:
