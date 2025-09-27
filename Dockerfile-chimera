@@ -1,0 +1,20 @@
+FROM chimeralinux/chimera
+
+RUN apk update
+RUN apk upgrade
+
+# required althttpd
+RUN apk add --no-cache \
+ linux-headers musl-devel musl-devel-static \
+ curl gmake openssl3-devel openssl3-devel-static \
+ sqlite-devel-static sqlite-devel \
+ clang libunwind-devel libunwind-devel-static \
+ libatomic-chimera-devel libatomic-chimera-devel-static \
+ libarchive-progs chimera-repo-user bash xz
+
+RUN apk add --no-cache ripgrep
+
+ENV XZ_OPT=-e9
+COPY build-static-althttpd-chimera.sh build-static-althttpd-chimera.sh
+RUN chmod +x ./build-static-althttpd-chimera.sh
+RUN bash ./build-static-althttpd-chimera.sh
