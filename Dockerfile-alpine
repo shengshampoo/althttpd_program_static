@@ -13,6 +13,6 @@ RUN apk add --no-cache \
   sqlite-static sqlite-dev ripgrep curl bash
 
 ENV XZ_OPT=-e9
-COPY build-static-althttpd-alpine.sh  build-static-althttpd-alpine.sh
-RUN chmod +x ./build-static-althttpd-alpine.sh
-RUN bash ./build-static-althttpd-alpine.sh
+COPY build-static-althttpd.sh  build-static-althttpd.sh
+RUN chmod +x ./build-static-althttpd.sh
+RUN bash ./build-static-althttpd.sh
