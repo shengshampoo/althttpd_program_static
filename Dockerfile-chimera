@@ -15,6 +15,6 @@ RUN apk add --no-cache \
 RUN apk add --no-cache ripgrep
 
 ENV XZ_OPT=-e9
-COPY build-static-althttpd-chimera.sh build-static-althttpd-chimera.sh
-RUN chmod +x ./build-static-althttpd-chimera.sh
-RUN bash ./build-static-althttpd-chimera.sh
+COPY build-static-althttpd.sh  build-static-althttpd.sh
+RUN chmod +x ./build-static-althttpd.sh
+RUN bash ./build-static-althttpd.sh
