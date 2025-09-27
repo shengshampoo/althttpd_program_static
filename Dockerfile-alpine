@@ -14,5 +14,5 @@ RUN apk add --no-cache \
 
 ENV XZ_OPT=-e9
 COPY build-static-althttpd-alpine.sh  build-static-althttpd-alpine.sh
-RUN chmod +x ./ build-static-althttpd-alpine.sh
-RUN bash ./ build-static-althttpd-alpine.sh
+RUN chmod +x ./build-static-althttpd-alpine.sh
+RUN bash ./build-static-althttpd-alpine.sh
