@@ -10,7 +10,7 @@ RUN apk upgrade
 RUN apk add --no-cache \
   gcc make linux-headers musl-dev \
   openssl-libs-static openssl-dev \
-  sqlite-static sqlite-dev ripgrep curl bash xz
+  sqlite-static sqlite-dev ripgrep curl bash xz lsb-release-minimal
 
 ENV XZ_OPT=-e9
 COPY build-static-althttpd.sh  build-static-althttpd.sh
