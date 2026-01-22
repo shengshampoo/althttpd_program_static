@@ -3,6 +3,10 @@
 
 set -e
 
+ALTHTTPD_BUILD_OS=$(lsb_release -is |  tr '[:upper:]' '[:lower:]')
+HOST_OS_RAW=$(uname -s)
+HOST_ARCH_RAW=$(uname -m)
+
 WORKSPACE=/tmp/workspace
 mkdir -p $WORKSPACE
 mkdir -p /work/artifact
@@ -16,5 +20,5 @@ make static-althttpsd
 mv static-althttpsd althttpd
 tar vcJf ./althttpd.tar.xz althttpd
 
-mv ./althttpd.tar.xz /work/artifact/
+mv ./althttpd-${ALTHTTPD_BUILD_OS}-${HOST_ARCH_RAW}.tar.xz /work/artifact/
 ./althttpd --version
