@@ -10,8 +10,8 @@ on:
   # run it manually
   workflow_dispatch:     
   schedule:
-    - cron: "23 2 * * *"  
-    - cron: "44 14 * * *"  
+    - cron: "21 12 * * *"  
+    - cron: "46 0 * * *"  
 
 jobs:
 
